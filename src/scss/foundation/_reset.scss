@@ -13,10 +13,10 @@
   box-sizing: border-box;
 }
 
-
 //リストのスタイル（箇条書き・番号）を削除します
 //normalize.cssで使用する場合
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
