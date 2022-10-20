@@ -6,3 +6,30 @@ yarn create vite
 ```
 - react
 - typescript
+
+## ルートディレクトリからパス指定できるようようにする
+### tsconfig.json
+追記
+- compilerOptions.baseUrl
+- compilerOptions.paths
+```json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  }
+}
+```
+
+### vite.config.ts
+resolveを追記
+```typescript
+export default defineConfig({
+    plugins: [react()],
+    resolve: {
+        alias: [{find: '@', replacement: '/src'}]
+    }
+})
+```
